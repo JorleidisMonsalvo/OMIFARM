@@ -127,7 +127,7 @@ span.text-red {
   cursor: pointer;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
-  color: #324d67;
+  color: #1f6743;
 
 }
 
@@ -147,7 +147,7 @@ span.text-red {
 }
 
 .product-price {
-  font-weight: 800;
+  font-weight: 700;
   margin-top: 6px;
   color: black;
 }
@@ -268,7 +268,7 @@ span.text-red {
 }
 
 .footer-banner-container {
-  background-color: #0b321b;
+  background-color: #24784e;
   position: relative;
   line-height: 1;
   color: white;
@@ -405,7 +405,7 @@ span.text-red {
 
 .cart-num-items {
   margin-left: 10px;
-  color: #f02d34;
+  color: #33ab6f;
 }
 
 .empty-cart {
@@ -504,7 +504,7 @@ span.text-red {
   margin-top: 10px;
   margin-top: 40px;
   text-transform: uppercase;
-  background-color: #f02d34;
+  background-color: #f0742d;
   color: #fff;
   cursor: pointer;
   transform: scale(1, 1);
@@ -519,7 +519,7 @@ span.text-red {
   display: flex;
   gap: 20px;
   margin: 40px;
-  margin-top: 60px;
+  margin-top: 100px;
   color: #2f4d27;
 
 }
