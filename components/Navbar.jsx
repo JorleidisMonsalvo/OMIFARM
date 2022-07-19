@@ -12,7 +12,7 @@ const Navbar = () => {
         <Link href="/">OMI FARM</Link>
       </p>
       <p className="navbar-link">
-        <Link href="/">Productos</Link>
+        <Link href="/products">Productos</Link>
       </p>
       <p className="navbar-link">
         <Link href="/">Testimonios</Link>
