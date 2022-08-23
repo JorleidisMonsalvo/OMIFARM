@@ -8,15 +8,13 @@ const ProductDetails = ({ product, similarProducts }) => {
   const { image, name, details, price, presentations } = product;
 
   const [index, setIndex] = useState(0);
+  const [indexSize, setIndexSize] = useState(0);
   //const { decQty, incQty, qty, onAdd } = useStateContext()
-  const [selectedPresentation, setSelectedPresentation] = useState(
-    presentations[0].productSize
-  );
 
   const selectSize = (e) => {
     let selected = e.target.value;
     let index = presentations.findIndex((e) => e.productSize === selected);
-    setSelectedPresentation(presentations[index]);
+    setIndexSize(index);
   };
   return (
     <div>
@@ -42,6 +40,7 @@ const ProductDetails = ({ product, similarProducts }) => {
             </div>
           </div>
           <div className="col details">
+            <h1>{name}</h1>
             <div className="row dropdown">
               <h4>Selecciona un tamaño:</h4>
               <br />
@@ -50,16 +49,15 @@ const ProductDetails = ({ product, similarProducts }) => {
                   <option value={el.productSize}>{el.productSize}</option>
                 ))}
               </select>
-              <p className="price">$ {selectedPresentation.price}</p>
+              <p className="price">$ {presentations[indexSize].price}</p>
             </div>
             <div className="row product-detail-desc">
-            <h1>{name}</h1>
-            <h4>Beneficios: </h4>
-            <ul>
-              {details.length > 0 &&
-                details.map((beneficio) => <li>{beneficio}</li>)}
-            </ul>
-                </div>
+              <h4>Beneficios: </h4>
+              <ul>
+                {details.length > 0 &&
+                  details.map((beneficio) => <li>{beneficio}</li>)}
+              </ul>
+            </div>
           </div>
         </div>
         {/*<div className="row">
@@ -71,7 +69,7 @@ const ProductDetails = ({ product, similarProducts }) => {
                 details.map((beneficio) => <li>{beneficio}</li>)}
             </ul> */}
 
-            {/* <p className="price">${price}</p>
+        {/* <p className="price">${price}</p>
           <div className="quantity">
             <h3>Cantidad</h3>
             <p className="quantity-desc">
@@ -94,16 +92,19 @@ const ProductDetails = ({ product, similarProducts }) => {
               Comprar Ahora
             </button>
           </div> */}
-         {/*  </div> 
+        {/*  </div> 
         </div>*/}
       </div>
       <div className="maylike-products-wrapper">
         <h2>Te podría interesar</h2>
         <div className="marquee">
           <div className="maylike-products-container track">
-            {similarProducts.map((item) => (
-              <Product key={item._id} product={item} />
-            ))}
+            {similarProducts.map(
+              (item) =>
+                item.line === product.line && (
+                  <Product key={item._id} product={item} />
+                )
+            )}
           </div>
         </div>
       </div>

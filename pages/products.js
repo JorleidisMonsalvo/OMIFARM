@@ -1,11 +1,19 @@
 import React from "react";
 import { Product } from "../components";
 import { client } from "../lib/client";
+import { useStateContext } from "../context/StateContext";
 
 const Products = ({ products }) => {
+  const { lineSelected } = useStateContext()
+  console.log('line',lineSelected)
   return (
     <div className="products-container">
-      {products?.map((product) => (
+      {lineSelected==='' && products?.map((product) => (
+        <Product key={product._id} product={product} />
+      ))}
+      {lineSelected!='' && products?.map((product) =>
+      product.line === lineSelected && 
+      (
         <Product key={product._id} product={product} />
       ))}
     </div>

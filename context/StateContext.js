@@ -9,9 +9,14 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
+  const [lineSelected, setLineSelected] = useState('')
 
   let foundProduct;
   let index;
+
+  const changeLine = (selected) => {
+    setLineSelected(selected)
+  }
 
   const incQty = () => {
     setQty((prevQty) => prevQty + 1);
@@ -97,7 +102,9 @@ export const StateContext = ({ children }) => {
         onAdd,
         setShowCart,
         toggleCartItemQuantity,
-        onRemove
+        onRemove,
+        changeLine,
+        lineSelected
       }}
     >
       {children}

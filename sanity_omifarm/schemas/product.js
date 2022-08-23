@@ -37,6 +37,11 @@ export default {
             title: 'Details',
             type: 'array',
             of: [{ type: 'string'}],
+        },
+        {
+            name: 'line',
+            title: 'Line',
+            type: 'string'
         }
     ]
 }

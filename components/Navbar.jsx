@@ -5,14 +5,14 @@ import { Cart } from './'
 import { useStateContext } from "../context/StateContext";
 
 const Navbar = () => {
-  const { showCart, setShowCart, totalQuantities } = useStateContext() 
+  const { showCart, setShowCart, totalQuantities, changeLine } = useStateContext() 
   return (
     <div className="navbar-container">
       <p className="logo">
         <Link href="/">OMI FARM</Link>
       </p>
       <p className="navbar-link">
-        <Link href="/products">Productos</Link>
+        <a href="/products" onClick={()=> changeLine('')}>Productos</a>
       </p>
       <p className="navbar-link">
         <Link href="/testimonios">Testimonios</Link>
