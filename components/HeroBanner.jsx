@@ -12,7 +12,7 @@ const HeroBanner = ({ heroBanner}) => {
             </div>
             <div>
                 <div className='hero-banner-button'>
-                <a href="https://api.whatsapp.com/send/?phone=573123809599&text=Bienvenido+a+OMI+FARM+COLOMBIA&type=phone_number&app_absent=0" target='_blank'>
+                <a href="https://api.whatsapp.com/send/?phone=573123809599&text=Bienvenido+a+OMI+FARM+COLOMBIA&type=phone_number&app_absent=0" target='_blank'  rel="noreferrer">
                     <button type='button'>{heroBanner.buttonText}</button>
                 </a>
                 </div>

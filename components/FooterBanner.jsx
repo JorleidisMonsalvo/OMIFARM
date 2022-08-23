@@ -14,16 +14,16 @@ const FooterBanner = ({ footerBanner }) => {
   return (
     <div className="footer-container">
       <p>
-        <a href="https://www.facebook.com/omifarmcolombia" target='_blank'>
+        <a href="https://www.facebook.com/omifarmcolombia" target='_blank'  rel="noreferrer">
           <FaFacebookF style={{fontSize: "25px"}} />
         </a>
-        <a href="https://www.instagram.com/omifarmcolombia/?hl=en" target='_blank'>
+        <a href="https://www.instagram.com/omifarmcolombia/?hl=en" target='_blank'  rel="noreferrer">
           <FaInstagram style={{fontSize: "25px"}} />
         </a>
-        <a href="https://www.youtube.com/channel/UCjYwPwS51DaDpic_bl68uoA" target='_blank'>
+        <a href="https://www.youtube.com/channel/UCjYwPwS51DaDpic_bl68uoA" target='_blank'  rel="noreferrer">
           <FaYoutube style={{fontSize: "25px"}} />
         </a>
-        <a href="https://api.whatsapp.com/send/?phone=573123809599&text=Bienvenido+a+OMI+FARM+COLOMBIA&type=phone_number&app_absent=0" target='_blank'>
+        <a href="https://api.whatsapp.com/send/?phone=573123809599&text=Bienvenido+a+OMI+FARM+COLOMBIA&type=phone_number&app_absent=0" target='_blank'  rel="noreferrer">
           <FaWhatsapp style={{fontSize: "25px"}} />
         </a>
         {/* <a href="https://www.facebook.com/omifarmcolombia" target="_blank">
