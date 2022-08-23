@@ -22,6 +22,7 @@ const Testimonios = ({ testimonios }) => {
                   className={
                     i === index ? "small-image selected-image" : "small-image"
                   }
+                  key={item._key}
                   onMouseEnter={() => setIndex(i)}
                 />
               ))}

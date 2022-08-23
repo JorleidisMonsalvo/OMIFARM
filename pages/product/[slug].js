@@ -45,8 +45,10 @@ const ProductDetails = ({ product, similarProducts }) => {
               <h4>Selecciona un tamaño:</h4>
               <br />
               <select onChange={selectSize}>
-                {presentations?.map((el) => (
-                  <option value={el.productSize}>{el.productSize}</option>
+                {presentations?.map((el,i) => (
+                  <option 
+                  value={el.productSize}
+                  key={i}>{el.productSize}</option>
                 ))}
               </select>
               <p className="price">$ {presentations[indexSize].price}</p>
@@ -55,7 +57,7 @@ const ProductDetails = ({ product, similarProducts }) => {
               <h4>Beneficios: </h4>
               <ul>
                 {details.length > 0 &&
-                  details.map((beneficio) => <li>{beneficio}</li>)}
+                  details.map((beneficio,i) => <li key={i}>{beneficio}</li>)}
               </ul>
             </div>
           </div>

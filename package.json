@@ -12,6 +12,7 @@
     "@sanity/client": "^3.2.0",
     "@sanity/image-url": "^1.0.1",
     "@stripe/stripe-js": "^1.25.0",
+    "bootstrap": "^5.2.0",
     "canvas-confetti": "^1.5.1",
     "emailjs-com": "^2.6.4",
     "next": "12.2.0",

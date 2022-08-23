@@ -46,11 +46,11 @@ const AboutUs = ({ aboutUsData }) => {
               <p>{aboutUsData[0].mision}</p>
             </div>
             <div className="col-xs-12 col-md-6">
-              <div class="image-stack">
-                <div class="image-stack__item image-stack__item--top">
+              <div className="image-stack">
+                <div className="image-stack__item image-stack__item--top">
                   <img src={urlFor(aboutUsData[0]?.misionImg[0])} alt="" />
                 </div>
-                <div class="image-stack__item image-stack__item--bottom">
+                <div className="image-stack__item image-stack__item--bottom">
                   <img src={urlFor(aboutUsData[0]?.misionImg[1])} alt="" />
                 </div>
               </div>
@@ -63,11 +63,11 @@ const AboutUs = ({ aboutUsData }) => {
           
             <div className="row">
               <div className="col-xs-12 col-md-6">
-                <div class="image-stack">
-                  <div class="image-stack__item image-stack__item--top">
+                <div className="image-stack">
+                  <div className="image-stack__item image-stack__item--top">
                     <img src={urlFor(aboutUsData[0]?.visionImg[0])} alt="" />
                   </div>
-                  <div class="image-stack__item image-stack__item--bottom">
+                  <div className="image-stack__item image-stack__item--bottom">
                     <img src={urlFor(aboutUsData[0]?.visionImg[1])} alt="" />
                   </div>
                 </div>

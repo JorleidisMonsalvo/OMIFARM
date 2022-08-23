@@ -8,24 +8,24 @@ import {
   FaEnvelope,
   FaWhatsapp,
 } from "react-icons/fa";
-import Link from "next/link";
+//import a from "next/a";
 
 const FooterBanner = ({ footerBanner }) => {
   return (
     <div className="footer-container">
       <p>
-        <Link href="https://www.facebook.com/omifarmcolombia">
+        <a href="https://www.facebook.com/omifarmcolombia" target='_blank'>
           <FaFacebookF style={{fontSize: "25px"}} />
-        </Link>
-        <Link href="https://www.instagram.com/omifarmcolombia/?hl=en">
+        </a>
+        <a href="https://www.instagram.com/omifarmcolombia/?hl=en" target='_blank'>
           <FaInstagram style={{fontSize: "25px"}} />
-        </Link>
-        <Link href="https://www.youtube.com/channel/UCjYwPwS51DaDpic_bl68uoA">
+        </a>
+        <a href="https://www.youtube.com/channel/UCjYwPwS51DaDpic_bl68uoA" target='_blank'>
           <FaYoutube style={{fontSize: "25px"}} />
-        </Link>
-        <Link href="https://api.whatsapp.com/send/?phone=573123809599&text=Bienvenido+a+OMI+FARM+COLOMBIA&type=phone_number&app_absent=0">
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=573123809599&text=Bienvenido+a+OMI+FARM+COLOMBIA&type=phone_number&app_absent=0" target='_blank'>
           <FaWhatsapp style={{fontSize: "25px"}} />
-        </Link>
+        </a>
         {/* <a href="https://www.facebook.com/omifarmcolombia" target="_blank">
           
         </a>

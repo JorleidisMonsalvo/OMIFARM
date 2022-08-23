@@ -12,7 +12,7 @@ const Navbar = () => {
         <Link href="/">OMI FARM</Link>
       </p>
       <p className="navbar-link">
-        <a href="/products" onClick={()=> changeLine('')}>Productos</a>
+        <Link href="/products"><a onClick={()=> changeLine('')}>Productos</a></Link>
       </p>
       <p className="navbar-link">
         <Link href="/testimonios">Testimonios</Link>
