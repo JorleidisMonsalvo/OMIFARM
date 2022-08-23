@@ -27,14 +27,16 @@ export default {
             }
         },
         {
-          name: 'price',
-          title: 'Price',
-          type: 'number'  
+          name: 'presentations',
+          title: 'Presentations',
+          type: 'array',
+          of: [{ type: 'productPrice'}]
         },
         {
             name: 'details',
             title: 'Details',
-            type: 'string'
+            type: 'array',
+            of: [{ type: 'string'}],
         }
     ]
 }

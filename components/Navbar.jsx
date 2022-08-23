@@ -15,17 +15,17 @@ const Navbar = () => {
         <Link href="/products">Productos</Link>
       </p>
       <p className="navbar-link">
-        <Link href="/">Testimonios</Link>
+        <Link href="/testimonios">Testimonios</Link>
       </p>
       <p className="navbar-link">
-        <Link href="/">Sobre nosotros</Link>
+        <Link href="/aboutUs">Sobre nosotros</Link>
       </p>
-      <button type="button" className="cart-icon" onClick={()=>setShowCart(true)}>
+      {/* <button type="button" className="cart-icon" onClick={()=>setShowCart(true)}>
         <AiOutlineShopping />
         <span className="cart-item-qty">{totalQuantities}</span>
       </button>
 
-      {showCart && <Cart />}
+      {showCart && <Cart />} */}
     </div>
   );
 };

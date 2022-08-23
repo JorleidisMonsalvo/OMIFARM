@@ -2,38 +2,76 @@ import React, { useState } from "react";
 import { client, urlFor } from "../../lib/client";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { Product } from "../../components";
-import { useStateContext } from '../../context/StateContext'
+import { useStateContext } from "../../context/StateContext";
 
 const ProductDetails = ({ product, similarProducts }) => {
-  const { image, name, details, price } = product;
-  const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty, onAdd } = useStateContext()
+  const { image, name, details, price, presentations } = product;
 
+  const [index, setIndex] = useState(0);
+  //const { decQty, incQty, qty, onAdd } = useStateContext()
+  const [selectedPresentation, setSelectedPresentation] = useState(
+    presentations[0].productSize
+  );
+
+  const selectSize = (e) => {
+    let selected = e.target.value;
+    let index = presentations.findIndex((e) => e.productSize === selected);
+    setSelectedPresentation(presentations[index]);
+  };
   return (
     <div>
       <div className="product-detail-container">
-        <div className="image-container">
-          <div >
-            <img
-              src={urlFor(image && image[index])}
-              className="product-detail-image"
-            />
-          </div>
-          <div className="small-images-container">
-            {image?.map((item, i)=>(
-                <img src={urlFor(item)}
-                className={i === index ? 'small-image selected-image' : 'small-image'}
-                onMouseEnter={()=> setIndex(i)}
+        <div className="row">
+          <div className="image-container col">
+            <div>
+              <img
+                src={urlFor(image && image[index])}
+                className="product-detail-image"
+              />
+            </div>
+            <div className="small-images-container">
+              {image?.map((item, i) => (
+                <img
+                  src={urlFor(item)}
+                  className={
+                    i === index ? "small-image selected-image" : "small-image"
+                  }
+                  onMouseEnter={() => setIndex(i)}
                 />
-            ))}
+              ))}
+            </div>
+          </div>
+          <div className="col details">
+            <div className="row dropdown">
+              <h4>Selecciona un tamaño:</h4>
+              <br />
+              <select onChange={selectSize}>
+                {presentations?.map((el) => (
+                  <option value={el.productSize}>{el.productSize}</option>
+                ))}
+              </select>
+              <p className="price">$ {selectedPresentation.price}</p>
+            </div>
+            <div className="row product-detail-desc">
+            <h1>{name}</h1>
+            <h4>Beneficios: </h4>
+            <ul>
+              {details.length > 0 &&
+                details.map((beneficio) => <li>{beneficio}</li>)}
+            </ul>
+                </div>
           </div>
         </div>
+        {/*<div className="row">
+           <div className="product-detail-desc">
+            <h1>{name}</h1>
+            <h4>Beneficios: </h4>
+            <ul>
+              {details.length > 0 &&
+                details.map((beneficio) => <li>{beneficio}</li>)}
+            </ul> */}
 
-        <div className="product-detail-desc">
-          <h1>{name}</h1>
-          <h4>Descripción: </h4>
-          <p>{details}</p>
-          <p className="price">${price}</p>
+            {/* <p className="price">${price}</p>
           <div className="quantity">
             <h3>Cantidad</h3>
             <p className="quantity-desc">
@@ -55,8 +93,9 @@ const ProductDetails = ({ product, similarProducts }) => {
             <button type="button" className="buy-now" onClick="">
               Comprar Ahora
             </button>
-          </div>
-        </div>
+          </div> */}
+         {/*  </div> 
+        </div>*/}
       </div>
       <div className="maylike-products-wrapper">
         <h2>Te podría interesar</h2>
