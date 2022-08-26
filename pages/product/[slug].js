@@ -10,6 +10,7 @@ const ProductDetails = ({ product, similarProducts }) => {
   const [index, setIndex] = useState(0);
   const [indexSize, setIndexSize] = useState(0);
   //const { decQty, incQty, qty, onAdd } = useStateContext()
+  let dollarUSLocale = Intl.NumberFormat('en-US');
 
   const selectSize = (e) => {
     let selected = e.target.value;
@@ -52,7 +53,7 @@ const ProductDetails = ({ product, similarProducts }) => {
                   key={i}>{el.productSize}</option>
                 ))}
               </select>
-              <p className="price">$ {presentations[indexSize].price}</p>
+              <p className="price">$ {dollarUSLocale.format(presentations[indexSize].price)}</p>
             </div>
             <div className="row product-detail-desc">
               <h4>Beneficios: </h4>
